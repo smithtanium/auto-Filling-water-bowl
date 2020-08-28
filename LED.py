@@ -50,9 +50,3 @@ class LED():
         self.L1.value = False # off
         self.L2.value = False # off
         return self.L2, self.L1, self.L3
-
-#    def AlarmRED(self):
-#        self.L3.value = False # off
-#        self.L1.value = False # off
-#        self.L2.value = False # off
-#        return self.L2, self.L1, self.L3
