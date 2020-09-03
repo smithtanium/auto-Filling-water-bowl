@@ -1,20 +1,20 @@
-import pulseio
-import simpleio
+#import pulseio
+#import simpleio
 import digitalio
-from adafruit_motor import servo
+#from adafruit_motor import servo
 
-class valvePosition(servo.Servo):
+class valvePosition():
 
-    def __init__(self, servoPin = None):
-        self.pwm = pulseio.PWMOut(servoPin, duty_cycle=2 ** 15, frequency=50)
-        super().__init__(self.pwm)
-        my_servo = servo.Servo(self.pwm)
-        self.angle = 0
+    def __init__(self, relayPin = None):
+        self.V1 = digitalio.DigitalInOut(relayPin)
+        self.V1.direction = digitalio.Direction.OUTPUT
+        self.V1.value = False
+
 
     def shut(self):
-        self.angle = 90
-        return self.angle
+        self.V1.value = False
+        return self.V1.value
 
     def open(self):
-        self.angle = 0
-        return self.angle
+        self.V1.value = True
+        return self.V1.value

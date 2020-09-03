@@ -6,5 +6,5 @@ class sonar():
         super().__init__()
 
     def level(self):
-        level = 15.0 - self.s1.distance
+        level = 10.0 - self.s1.distance
         return level
